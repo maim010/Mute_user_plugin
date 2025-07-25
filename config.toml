@@ -1,0 +1,63 @@
+# mute_user_plugin - 自动生成的配置文件
+# 群聊禁言管理插件，提供智能禁言功能
+
+# 插件基本信息配置
+[plugin]
+# 是否启用插件
+enabled = true
+# 配置文件版本
+config_version = "0.0.1"
+
+# 组件启用控制
+[components]
+# 是否启用智能禁言Action
+enable_smart_mute = true
+# 是否启用禁言命令Command（调试用）
+enable_mute_command = true
+
+# 权限管理配置
+[permissions]
+# 允许使用禁言命令的用户列表，格式：['platform:user_id']，如['qq:123456789']。空列表表示不启用权限控制
+allowed_users = ['qq:2367677516']
+# 允许使用禁言动作的群组列表，格式：['platform:group_id']，如['qq:987654321']。空列表表示不启用权限控制
+allowed_groups = ['qq:882481416']
+
+# 核心禁言功能配置
+[mute]
+# 是否启用人性化的消息显示
+enable_message_formatting = true
+# 是否记录禁言历史（未来功能）
+log_mute_history = true
+# 成功禁言后发送的随机消息模板
+templates = ['好的，已将 {target} 禁言 {duration}，理由：{reason}', '收到，对 {target} 执行禁言 {duration}，因为{reason}', '明白了，禁言 {target} {duration}，原因是{reason}', '已将 {target} 禁言 {duration}，理由：{reason}', '对 {target} 执行禁言 {duration}，因为{reason}']
+# 执行禁言过程中发生错误时发送的随机消息模板
+error_messages = ['没有指定禁言对象呢~', '找不到 {target} 这个人呢~', '查找用户信息时出现问题~']
+
+# 智能禁言Action的专属配置
+[smart_mute]
+# LLM判定的严格模式
+strict_mode = true
+# 关键词激活的敏感度
+# 可选值: low, normal, high
+keyword_sensitivity = "high"
+# 是否允许并行执行（暂未启用）
+allow_parallel = false
+
+# 禁言命令Command的专属配置
+[mute_command]
+# 最大批量禁言数量（未来功能）
+max_batch_size = 5
+# 命令冷却时间（秒）
+cooldown_seconds = 1
+
+# 日志记录相关配置
+[logging]
+# 日志记录级别
+# 可选值: DEBUG, INFO, WARNING, ERROR
+level = "INFO"
+# 日志记录前缀
+prefix = "[MuteUserPlugin]"
+# 日志中是否包含用户信息
+include_user_info = true
+# 日志中是否包含操作信息
+include_action_info = true
