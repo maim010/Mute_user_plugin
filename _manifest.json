@@ -1,0 +1,19 @@
+{
+  "manifest_version": 1,
+  "name": "发群公告插件",
+  "version": "1.0.0",
+  "description": "发群公告插件，提供智能发群公告功能",
+  "author": {
+    "name": "010",
+    "url": "https://github.com/maim010/send_group_notice_plugin/"
+  },
+  "license": "GPL-v3.0-or-later",
+  "host_application": {
+    "min_version": "0.8.0",
+    "max_version": "0.8.1"
+  },
+  "keywords": ["moderation", "admin", "group"],
+  "categories": ["Moderation", "Group Management", "Admin Tools"],
+  "default_locale": "zh-CN",
+  "locales_path": "_locales"
+}
