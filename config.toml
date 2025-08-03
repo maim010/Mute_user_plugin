@@ -29,7 +29,22 @@ enable_message_formatting = true
 # 是否记录禁言历史（未来功能）
 log_mute_history = true
 # 成功禁言后发送的随机消息模板
-templates = ['好的，已将 {target} 禁言 {duration}，理由：{reason}', '收到，对 {target} 执行禁言 {duration}，因为{reason}', '明白了，禁言 {target} {duration}，原因是{reason}', '已将 {target} 禁言 {duration}，理由：{reason}', '对 {target} 执行禁言 {duration}，因为{reason}']
+
+[mute.templates]
+# 禁言时使用的模板
+mute = [
+    '{target}，你因为{reason}被关进小黑屋{duration}，好好反省一下吧！', 
+    '哟，这不是{target}嘛，{reason}的样子真狼狈，禁言套餐{duration}送上！', 
+    '根据《麦麦临时约法》，决定对{user_name}处以禁言{duration}的惩罚，原因：{reason}', 
+    '已将 {target} 禁言 {duration}，理由：{reason}'
+]
+# 解除禁言时使用的模板
+unmute = [
+    '好的，已解除用户 {user_id} 的禁言。',
+    '收到，已为用户 {user_id} 解除禁言。',
+    '明白了，用户 {user_id} 的禁言已解除。'
+]
+
 # 执行禁言过程中发生错误时发送的随机消息模板
 error_messages = ['没有指定禁言对象呢~', '找不到 {target} 这个人呢~', '查找用户信息时出现问题~']
 
